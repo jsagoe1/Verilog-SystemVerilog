@@ -34,3 +34,35 @@ module full_adder  (output logic sum,
   assign {carry_out, sum} = a + b + carry_in;
 endmodule
   
+
+
+// n-bit carry-look-ahead adder test_bench
+module CLA_adder_test #(int n=4);   // you can change the n paramter here for other bits
+  logic [n-1:0] sum;
+  logic cout;
+  logic [n-1:0] a, b;
+  logic cin;
+  logic [n:0] correct;
+  
+  assign correct = a + b;  //just to track correct output 
+    
+  CLA_adder #(n) c0(sum, cout, a, b, cin);
+  
+  logic [n:0] out;
+  assign out = {cout, sum};
+  
+  initial begin
+    a = 0; b = 0; cin = 0;
+    #100 $finish;
+  end
+  
+  always begin
+    #20 a = $random%n; b = $random%n;
+  end
+  
+  initial begin
+    $display("  \\a               \\b              \\out         \\correct");
+    $monitor("%b(%d)\t%b(%d)\t%b(%d)\t%b(%d)", a, a, b, b, out, out, correct, correct);
+  end
+  
+endmodule
