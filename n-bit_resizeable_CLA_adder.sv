@@ -3,10 +3,10 @@
 module CLA_adder #(int n = 4)
   (
     output logic [n-1:0] 	sum,
-    output logic 			cout,
+    output logic 		cout,
     input uwire [n-1:0] 	a,
     input uwire [n-1:0] 	b,
-    input uwire 			cin
+    input uwire 		cin
   );
   
   logic [n-1:-1] 		carry;
