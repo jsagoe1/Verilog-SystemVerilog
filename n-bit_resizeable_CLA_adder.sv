@@ -47,10 +47,10 @@ endmodule
 // n-bit carry-look-ahead adder test_bench
 module CLA_adder_test #(int n=4);   // you can change the n paramter here for other bits
   logic [n-1:0] 	sum;
-  logic 			cout;
+  logic 		cout;
   logic [n-1:0] 	a;
   logic [n-1:0]		b;
-  logic 			cin;
+  logic 		cin;
   logic [n:0] 		correct;
   
   assign correct = a + b;  //just to track correct output 
