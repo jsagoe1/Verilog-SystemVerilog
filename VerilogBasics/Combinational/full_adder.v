@@ -1,10 +1,7 @@
 
-module full_adder(sum, carry,	a, b,	cin);
-  input a;
-  input b;
-  input cin;
-  output sum;
-  output carry;
+module full_adder(
+  output logic sum, carry,
+  input uwire a, b, cin);
   
   always @(a, b, cin)
     begin
