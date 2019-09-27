@@ -1,5 +1,4 @@
 
-// Code your design here
 module full_adder(sum, carry,	a, b,	cin);
   input a;
   input b;
