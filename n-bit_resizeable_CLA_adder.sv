@@ -36,7 +36,7 @@ module full_adder
   (
     output logic sum,
     output logic carry_out,
-   	input uwire a, b, carry_in
+   input uwire a, b, carry_in
   );
   
   assign {carry_out, sum} = a + b + carry_in;
