@@ -60,21 +60,23 @@ module CLA_adder_test #(int n=4);   // you can change the n paramter here for ot
   logic [n:0] out;
   assign out = {cout, sum};
   
-  initial begin
-    a = 	0; 
-    b = 	0; 
-    cin = 	0;
-    
-    #100 $finish;
-  end
+  initial 
+    begin
+      a = 	0; 
+      b = 	0; 
+      cin = 	0;
+      #100 $finish;
+    end
   
-  always begin
-    #5 a = $random%n; b = $random%n;
-  end
+  always 
+    begin
+      #5 a = $random%n; b = $random%n;
+    end
   
-  initial begin
-    $display("  \\a               \\b              \\out         \\correct");
-    $monitor("%b(%d)\t%b(%d)\t%b(%d)\t%b(%d)", a, a, b, b, out, out, correct, correct);
-  end
+  initial 
+    begin
+      $display("  \\a               \\b              \\out         \\correct");
+      $monitor("%b(%d)\t%b(%d)\t%b(%d)\t%b(%d)", a, a, b, b, out, out, correct, correct);
+    end
   
 endmodule
