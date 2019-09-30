@@ -7,9 +7,9 @@ with write_enable,
     address_input,
 */
 
-module sram_seq#(int m = 8, int n = 1024)
-  (output logic [m-1:0] 		data_out,
-   input logic [m-1:0] 			data_in,
+module sram_seq #(int m = 8, int n = 1024)
+  (output logic [m-1:0] 	data_out,
+   input logic [m-1:0] 		data_in,
    input logic [$clog2(n)-1:0] 	addr,		//2^k = n --> k = $clog2(n)
    input logic clk,
    input logic we,
