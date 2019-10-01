@@ -2,11 +2,11 @@
 
 module sync_fifo #(int depth_bits = 8, int input_width = 8)
   (output logic [input_width - 1:0] 	data_out,
-   input logic [input_width - 1:0] 		data_in,
-   input uwire 							clock,
-   input uwire 							reset,
-   input uwire 							write_enable,
-   input uwire							read_enable);
+   input logic [input_width - 1:0] 	data_in,
+   input uwire 		clock,
+   input uwire 		reset,
+   input uwire 		write_enable,
+   input uwire		read_enable);
   
   logic [input_width -1:0] memory [0:2^depth_bits - 1];
   logic [depth_bits -1:0] write_address;
