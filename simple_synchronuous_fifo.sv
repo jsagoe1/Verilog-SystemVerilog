@@ -110,7 +110,7 @@ module sync_fifo #(int depth_bits = 8, int input_width = 8)
         endcase
     end
   
-  assign dbl_write_address = write_address + 2;  // 
+  assign dbl_write_address = write_address + 2;  // "+2" because it is assigned one clock cycle before the write_pointer is actually increamented.
   assign next_read_address = read_address + 1'b1;
   
 endmodule
