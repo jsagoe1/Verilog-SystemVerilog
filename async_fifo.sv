@@ -168,10 +168,10 @@ endmodule
 
 //write_pointer, write_address and write address generator
 module wptr_full #(int addrsize = 8)
-  (output logic               wfull,			//buffer full flag
+  (output logic                 wfull,			//buffer full flag
    output logic [addrsize-1:0] 	waddr,			//write address
-   output logic	[addrsize:0] 	wptr,			//write pointer
-   input logic [addrsize:0] 	wq2_rptr,		//synchronized read pointer(gray code)
+   output logic	[addrsize:0] 	  wptr,			//write pointer
+   input logic [addrsize:0] 	    wq2_rptr,		//synchronized read pointer(gray code)
    input logic 	               winc,			//write enable
    input logic	               wclk,			//write logic clock
    input logic	               wrst_n);		//write logic reset
