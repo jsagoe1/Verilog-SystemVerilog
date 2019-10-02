@@ -129,9 +129,9 @@ endmodule
 //read_pointer, read_address and read empty flag generator
 module rptr_empty #(int addrsize = 8)
   (output logic 				rempty,		//empty flag
-   output logic [addrsize-1:0] 	              raddr,		//read address
-   output logic	[addrsize:0] 	              rptr,		//read pointer
-   input logic	[addrsize:0] 	              rq2_wptr,	//synchronized write pointer (gray code)
+   output logic [addrsize-1:0] 	                raddr,		//read address
+   output logic	[addrsize:0] 	                rptr,		//read pointer
+   input logic	[addrsize:0] 	                rq2_wptr,	//synchronized write pointer (gray code)
    input logic					rinc,		//read enable
    input logic					rclk,		//read clock
    input logic					rrst_n);	//read logic reset
