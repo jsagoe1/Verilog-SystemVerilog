@@ -2,10 +2,10 @@
 //"http://www.sunburst-design.com/papers/CummingsSNUG2002SJ_FIFO1.pdf"
 
 module async_fifo #(int width = 8, addrsize = 8)
-  (output logic [width-1:0] 	rdata,				//data output
+  (output logic [width-1:0] 	        rdata,				//data output
    output logic					wfull,				//full flag
    output logic					rempty,				//buffer empty flag
-   input logic [width-1:0] 		wdata,				//write input data
+   input logic [width-1:0] 		        wdata,				//write input data
    input logic					winc,				//write enable
    input logic					wclk,				//write clock
    input logic					wrst_n,				//write reset (active low)
