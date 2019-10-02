@@ -108,8 +108,8 @@ endmodule
 module sync_r2w #(int addrsize = 8)
   (output logic	[addrsize:0]	wq2_rptr,	//synchronized read_pointer graycode
    input logic	[addrsize:0]	rptr,		//read pointer
-   input logic					wclk, 		//write clock
-   input logic					wrst_n);	//write logic reset (Active low)
+   input logic			wclk, 		//write clock
+   input logic			wrst_n);	//write logic reset (Active low)
   
   logic [addrsize:0]	wq1_rptr;			//connection point b/n sync FFs
   
