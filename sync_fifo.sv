@@ -45,7 +45,7 @@ module sync_fifo #(int depth_bits = 8, int input_width = 8)
           //time a read is made from the fifo
           
           if ((!full) || (read_enable))
-              write_enable <= write_address + 1'b1;
+              write_address <= write_address + 1'b1;
           else
             overrun <=1'b1;
         end
