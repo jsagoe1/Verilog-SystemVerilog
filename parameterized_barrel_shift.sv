@@ -39,3 +39,40 @@ module mux2n #(int n=4)(output logic [n-1:0] d_out,
   assign d_out = sel? a1 : a0;
   
 endmodule
+
+
+
+module test;
+  localparam int n = 8;
+  localparam int iter = $clog2(n);
+  
+  logic [n-1:0] d_out, d_in;
+  logic [n-1:0] outmonitor[0:iter];
+  logic [$clog2(n)-1:0] sh_amt;
+  
+  barrel_shiftern #(n) b0(.d_out(d_out),
+                          .outmonitor(outmonitor),
+                          .d_in(d_in),
+                          .sh_amt(sh_amt));
+  
+  initial begin
+    $display("\t\ttime\td_in\t\tsh_amt\toutmonitor[0]\toutmonitor[1]\toutmonitor[2]\toutmonitor[3]\td_out");
+    
+    d_in = 0;
+    sh_amt = 0;
+    
+    //testing to shift it by 1,2,3..'n' times
+    for (int i=1; i<n; i++) begin
+      fork
+        #10 d_in = 8'b11111111;
+        #10 sh_amt = i;
+      join
+    end
+    
+    #100 $finish;
+  end
+  
+  initial
+    $monitor("%d\t%b\t%b(%d)\t%b\t%b\t%b\t%b\t%b", $time, d_in, sh_amt, sh_amt,outmonitor[0], outmonitor[1],outmonitor[2], outmonitor[3],d_out);
+  
+endmodule
