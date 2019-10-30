@@ -63,7 +63,7 @@ module test;
     
     //testing to shift it by 1,2,3..'n' times
     for (int i=1; i<n; i++) begin
-      fork
+      fork                          //not neccessary; can put both on same line after '#10'; just wanted to use fork-join :)
         #10 d_in = 8'b11111111;
         #10 sh_amt = i;
       join
