@@ -8,7 +8,7 @@ module barrel_shiftern #(int n=4, iter=$clog2(n))(output logic [n-1:0] d_out,   
   
   logic [n-1:0] out[0:iter];                      // n-bit out[0], out[1], .....up to out[iter+1] 
   
-  for(genvar i=1; i<(iter+1); i++) begin					// using genvar to instantiate 2-input muxen
+  for(genvar i=1; i<(iter+1); i++) begin          // using genvar to instantiate 2-input muxen
     
     localparam int catw = 2**(i-1);								// no of 0 bits eg if i = 3, catw=4 ===> 2'b0000
     
