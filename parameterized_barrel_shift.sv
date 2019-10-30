@@ -12,11 +12,12 @@ module barrel_shiftern #(int n=4, iter=$clog2(n))(output logic [n-1:0] d_out,   
     
     localparam int catw = 2**(i-1);								// no of 0 bits eg if i = 3, catw=4 ===> 2'b0000
     
+    //cat_left and _right to be concatenated in generate block
     logic [catw-1:0] cat_left;
     logic [n-1:catw] cat_right;
   
-    assign cat_right = out[i-1][n-1:catw];				// right of concatenation  eg. if (i = 3, n=16), cat_right = out[15:4]
-    assign cat_left  = {catw{1'b0}};						    // left of concatenation eg. if (i=3, n=16), cat_left = 4'b0 = 0000
+    assign cat_right = out[i-1][n-1:catw];        // right of concatenation  eg. if (i = 3, n=16), cat_right = out[15:4]
+    assign cat_left  = {catw{1'b0}};              // left of concatenation eg. if (i=3, n=16), cat_left = 4'b0 = 0000
     
     mux2n #(n) m0(.d_out(out[i]),
                   .a0(out[i-1]),
