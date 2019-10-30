@@ -10,7 +10,7 @@ module barrel_shiftern #(int n=4, iter=$clog2(n))(output logic [n-1:0] d_out,   
   
   for(genvar i=1; i<(iter+1); i++) begin          // using genvar to instantiate 2-input muxen
     
-    localparam int catw = 2**(i-1);								// no of 0 bits eg if i = 3, catw=4 ===> 2'b0000
+    localparam int catw = 2**(i-1);               // no of 0 bits eg if i = 3, catw=4 ===> 2'b0000
     
     //cat_left and _right to be concatenated in generate block
     logic [catw-1:0] cat_left;
