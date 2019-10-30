@@ -2,16 +2,16 @@
 
 
 module barrel_shiftern #(int n=4, iter=$clog2(n))(output logic [n-1:0] d_out,   // iter is number of  n-bit 2-input muxen needed
-                                                    output logic [n-1:0] outmonitor[0:iter],
-                                  					input uwire [n-1:0] d_in,
-                                  					input uwire [$clog2(n)-1:0] sh_amt);
+                                                  output logic [n-1:0] outmonitor[0:iter],
+                                                  input uwire [n-1:0] d_in,
+                                                  input uwire [$clog2(n)-1:0] sh_amt);
   
   
-  logic [n-1:0] out[0:iter];						// n-bit out[0], out[1], .....up to out[iter+1] 
+  logic [n-1:0] out[0:iter];                      // n-bit out[0], out[1], .....up to out[iter+1] 
   
-  for(genvar i=1; i<(iter+1); i++) begin			// using genvar to instantiate 2-input muxen
+  for(genvar i=1; i<(iter+1); i++) begin					// using genvar to instantiate 2-input muxen
     
-    localparam int catw = 2**(i-1);					// no of 0 bits eg if i = 3, catw=4 ===> 2'b0000
+    localparam int catw = 2**(i-1);								// no of 0 bits eg if i = 3, catw=4 ===> 2'b0000
     
     logic [catw-1:0] cat_left;
     logic [n-1:catw] cat_right;
