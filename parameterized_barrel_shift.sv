@@ -26,8 +26,8 @@ module barrel_shiftern #(int n=4, iter=$clog2(n))(output logic [n-1:0] d_out,   
   end
   
   assign outmonitor = out;
-  assign out[0] = d_in;								//first mux to modue input
-  assign d_out = out[iter];							//last mux to module output
+  assign out[0] = d_in;                           //first mux to modue input
+  assign d_out = out[iter];                       //last mux to module output
     
 endmodule
 
