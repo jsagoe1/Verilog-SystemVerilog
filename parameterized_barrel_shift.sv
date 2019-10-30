@@ -6,7 +6,6 @@ module barrel_shiftern #(int n=4, iter=$clog2(n))(output logic [n-1:0] d_out,   
                                                   input uwire [n-1:0] d_in,
                                                   input uwire [$clog2(n)-1:0] sh_amt);
   
-  
   logic [n-1:0] out[0:iter];                      // n-bit out[0], out[1], .....up to out[iter+1] 
   
   for(genvar i=1; i<(iter+1); i++) begin					// using genvar to instantiate 2-input muxen
