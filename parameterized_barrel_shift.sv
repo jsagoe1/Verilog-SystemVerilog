@@ -21,7 +21,7 @@ module barrel_shiftern #(int n=4, iter=$clog2(n))(output logic [n-1:0] d_out,   
     
     mux2n #(n) m0(.d_out(out[i]),
                   .a0(out[i-1]),
-                  .a1({cat_left, cat_right}),  		// concatenation (eg. if (i=3 and n=16) == {2'b0000, out[2][15:4]}
+                  .a1({cat_left, cat_right}),     // concatenation (eg. if (i=3 and n=16) == {2'b0000, out[2][15:4]}
                   .sel(sh_amt[i-1]));
   end
   
