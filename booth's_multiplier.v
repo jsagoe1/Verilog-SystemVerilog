@@ -1,14 +1,14 @@
 module booth_multiplier #(int w = 8)
-  (output logic signed 	[2*w-1:0]	prod,
-   output logic 					ready,
-   input uwire signed 	[w-1:0] 	mc, mp,
-   input uwire 						clk, start);
+  (output logic signed    [2*w-1:0]   prod,
+   output logic                       ready,
+   input uwire signed     [w-1:0]     mc, mp,
+   input uwire                        clk, start);
   
-  logic [w-1:0] 					A, Q, M;
-  logic 							Q_1;
-  logic [3:0] 						count;
+  logic [w-1:0]                       A, Q, M;
+  logic                               Q_1;
+  logic [3:0]                         count;
   
-  logic [w-1:0] 					sum, difference;
+  logic [w-1:0]                       sum, difference;
   
   always_ff @(posedge clk) begin
     if (start) begin
