@@ -25,5 +25,5 @@ sw	101011	rs	rt	        offset	  Store memory word
 beq	000100	rs	rt	        offset	  Branch on equal
 bne	000101	rs	rt	        offset	  Branch on not equal
 lui	001111	00000	rt	        Immediate	  Load upper immediate
-j	000010	    address	      Jump
-jal	000011	    address	      Call
+j	000010	            address	      Jump
+jal	000011	            address	      Call
