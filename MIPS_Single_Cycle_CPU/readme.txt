@@ -16,10 +16,10 @@ sll	000000	00000	rt	rd	sa	  000000	Shift left
 srl	000000	00000	rt	rd	sa	  000010	Logical shift right
 sra	000000	00000	rt	rd	sa	  000011	Arithmetic shift right
 jr	000000	rs	00000	00000	00000	  001000	Register jump
-addi	001000	rs	rt	        Immediate	  Immediate add
-andi	001100	rs	rt	        Immediate	  Immediate AND
-ori	001101	rs	rt	        Immediate	  Immediate OR
-xori	001110	rs	rt	        Immediate	  Immediate XOR
+addi	001000	rs	rt	        Immediate	      Immediate add
+andi	001100	rs	rt	        Immediate	      Immediate AND
+ori	001101	rs	rt	        Immediate	      Immediate OR
+xori	001110	rs	rt	        Immediate	      Immediate XOR
 lw	100011	rs	rt	        offset	  Load memory word
 sw	101011	rs	rt	        offset	  Store memory word
 beq	000100	rs	rt	        offset	  Branch on equal
