@@ -5,7 +5,7 @@ Performs a single instruction in one clock cycle.
 
 Performs the following instructions
 
-Inst.	[31:26]	[25:21]	[20:16]	[15:11]	  [10:6]	[5:0]	Meaning
+Inst.	[31:26]	[25:21]	[20:16]	[15:11]	    [10:6]	  [5:0]	Meaning
 ----------------------------------------------------------------------------------------
 add	000000	rs	rt	rd	00000	100000	Register add
 sub	000000	rs	rt	rd	00000	100010	Register subtract
