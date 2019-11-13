@@ -15,20 +15,20 @@ zero:		all 0's		all 0's		0x00000000
 */
 
 module	f2i_32	(
-	output	logic	[31:0]	d,	//integer
-	output	logic	p_lost,		//precision	lost
-	output	logic	denorm,		//denormalized
-	output	logic	invalid,	//inf,	NaN,	out	of	range
-	input	uwire	[31:0]	a);	//floating	point	repr
+	output	logic	[31:0]	d,		//integer
+	output	logic		p_lost,		//precision lost
+	output	logic		denorm,		//denormalized
+	output	logic		invalid,	//inf,	NaN, out of range
+	input	uwire	[31:0]	a);		//floating point repr
 	
-	//internal	signals
-	logic	hidden_bit	=	|(a[30:23]);	//hidden_bit	=	(exp	==	0)
-	logic	frac_is_not_0	=	|(a[22:0]);	//if	frac	is	0	or	not
+	//internal signals
+	logic	hidden_bit	=	|(a[30:23]);		//hidden_bit = (exp == 0)
+	logic	frac_is_not_0	=	|(a[22:0]);		//if frac is 0 or not
 	
-	assign	denorm	=	~hidden_bit	&	frac_is_not_0;	//if	denormalized
+	assign	denorm	=	~hidden_bit & frac_is_not_0;	//if denormalized
 	
-	logic	is_zero	=	~hidden_bit	&	~frac_is_not_0;	//if	zero
-	logic	sign	=	a[31];	//sign	bit
+	logic	is_zero	=	~hidden_bit & ~frac_is_not_0;	//if zero
+	logic	sign	=	a[31];				//sign	bit
 	
 	logic	[8:0]	shift_right_bits	=	9'd158	-	{1'b0,	a[30:23]};	//127	+	31,	9th	bit	if	too	large
 	logic	[55:0]	frac0	=	{hidden_bit,	a[22:0],	32'h0};	//32+24	=	56	bits
