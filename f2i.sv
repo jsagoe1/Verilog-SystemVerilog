@@ -36,7 +36,7 @@ module f2i_32 (
                                         (frac0 >> 6'd32) : (frac0 >> shift_right_bits);
                                         //shift right by 32 : shift by shift amount
     
-    logic           lost_bits           = |f_abs[23:0];							//if !=0, p_lost = 1
+	logic           lost_bits           = |f_abs[23:0];							//if !=0, p_lost = 1 
     logic [31:0]	int32 				= sign?									//neg or pos
                                         ~f_abs[55:24] + 32'd1 : f_abs[55:24];
                                         //find 2's comp 	   :  positive
