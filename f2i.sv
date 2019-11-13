@@ -25,7 +25,7 @@ module f2i_32 (
     logic		hidden_bit 		= |(a[30:23]); 				   //hidden_bit = (exp == 0)
     logic		frac_is_not_0 	= |(a[22:0]);	 			   //if frac is 0 or not
     
-    assign 	denorm  = ~hidden_bit & frac_is_not_0;   	      //if denormalized
+    assign 	denorm  = ~hidden_bit & frac_is_not_0;//if denormalized
     
     logic is_zero   = ~hidden_bit & ~frac_is_not_0;   		  //if zero
     logic sign 	    = a[31];								  //sign bit
