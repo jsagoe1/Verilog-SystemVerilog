@@ -1,6 +1,6 @@
-module singleCycleComp32 (											// single cycle computer 
-  output logic [31:0] 	pc,											//program counter
-  output logic [31:0] 	inst,										// instruction from inst reg
+module singleCycleComp32 (										// single cycle computer 
+  output logic [31:0] 	pc,										//program counter
+  output logic [31:0] 	inst,									// instruction from inst reg
   output logic [31:0] 	aluout,										// output of alu
   output logic [31:0] 	memout,										// data memory output
   input uwire		  	clk, clrn);									// clock and reset
