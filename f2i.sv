@@ -33,7 +33,7 @@ module f2i_32 (
   logic [8:0]	shift_right_bits 	= 9'd158 - {1'b0, a[30:23]};			//127 + 31, 9th bit if too large
   logic [55:0]	frac0 				= {hidden_bit, a[22:0], 32'h0};   		//32+24 = 56 bits
   logic [55:0]  f_abs 				= ($signed(shift_right_bits) > 9'd32)?	//shift
-  									(frac0 >> 6'd32) : (frac0 >> shift_right_bits);
+	(frac0 >> 6'd32) : (frac0 >> shift_right_bits); 
   									//shift right by 32 : shift by shift amount
   logic 		lost_bits 			= |f_abs[23:0];							//if !=0, p_lost = 1
   logic [31:0]	int32 				= sign?									//neg or pos
