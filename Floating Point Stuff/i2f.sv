@@ -1,4 +1,4 @@
-module	i2f	(									//convert integer to float
+module	i2f	(								//convert integer to float
 	output 	logic 			p_lost,					//precision lost
 	output	logic	[31:0]	a,						//float	
 	input	uwire	[31:0]	d);						//integer
