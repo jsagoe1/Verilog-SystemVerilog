@@ -16,7 +16,7 @@ module	i2f	(								//convert integer to float
 	assign			f2	=	sa[2]?	{f3[27:0], 4’b0} : f3;
 	assign			sa[1]	=	~|f2[31:30];			//2-bit	0
 	assign			f1	=	sa[1]?	{f2[29:0], 2’b0} : f2;
-	assign			sa[0]	=	~f1[31];				//1-bit 0
+	assign			sa[0]	=	~f1[31];			//1-bit 0
 	assign			f0	=	sa[0]?	{f1[30:0], 1’b0} : f1;
 	assign			p_lost	=	|f0[7:0];			//not 0
 	wire	[22:0]	fraction	=	f0[30:8];			//f0[31] = 1, hidden bit
