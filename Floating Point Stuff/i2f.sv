@@ -8,7 +8,7 @@ module	i2f	(								//convert	integer	to	float
 	wire	[31:0]	f4,f3,f2,f1,f0;
 	wire	[4:0]	sa;								//shift	amount	(to	1.f)
 	assign			sa[4]	=	̃|f5[31:16];			//16-bit	0
-	assign			f4		=	sa[4]? {f5[15:0], 16’b0}	:	f5;
+	assign			f4	=	sa[4]? {f5[15:0], 16’b0}	:	f5;
 	assign			sa[3]	=	̃|f4[31:24];			//8-bit	0
 	assign			f3	=	sa[3]?	{f4[23:0], 8’b0}	:	f4;
 	assign			sa[2]	=	̃|f3[31:28];			//4-bit	0
