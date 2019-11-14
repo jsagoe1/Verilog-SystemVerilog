@@ -24,3 +24,4 @@ module	i2f	(								//convert integer to float
 	
 	assign			a	=	(d == 0)? 0 : {sign, exponent, fraction};
 endmodule
+
