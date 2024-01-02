@@ -11,7 +11,7 @@ module tb_top();
 
 // Instantiate the top level module under test (DUT)
 //
-clkdiv10 dut (
+freq_div_by_n_10b dut (
     .clkout          (clkout),
     .rstb            (rst_syncb),
     .bypass          (bypass),
