@@ -63,14 +63,14 @@ initial begin
         make_upd_req();
 
         // wait 100 input clock cycles
-        repeat(100) @(posedge clkin);
+       repeat(200) @(posedge clkin);
 
         // set bypass
         #($urandom_range(10)) bypass = 1;
-        repeat(100) @(posedge clkin);
+       repeat(200) @(posedge clkin);
         // disable bypass
         #($urandom_range(10)) bypass = 0;
-        repeat(100) @(posedge clkin);
+       repeat(200) @(posedge clkin);
    end
    #200;
    $finish;
